@@ -42,9 +42,10 @@ My name is Marco😎. Ever since I got my hands on my father’s first computer,
 ## My website
 <p align="center">
   <a href="https://markus2409.github.io/">
-    <img src="https://img.shields.io/badge/Visit%20my%20website-markus2409.github.io-1f6feb?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website">
+    <img src="https://img.shields.io/badge/Visit%20my%20website-markus2409.github.io-1f6feb?&logo=google-chrome&logoColor=white" alt="Website">
   </a>
 </p>
+
 ---
 
 ## Contacts
