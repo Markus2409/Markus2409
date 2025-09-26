@@ -33,7 +33,7 @@ I am passionate about computer science and programming, and I am particularly in
 ### [Building a Profile Hidden Markov Model (HMM) for the detection of Kunitz-type protease inhibitor domains](https://github.com/Markus2409/MSc_Bioinformatics_HMM_KunitzDomain)
 ---
 
-## Technical Skills
+## Computing Skills
 
 | Languages |
 |-------------------|
@@ -41,7 +41,7 @@ I am passionate about computer science and programming, and I am particularly in
 
 ---
 
-## Let's Connect!
+## Contacts
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-MarcoCuscuna-blue?logo=linkedin)](https://www.linkedin.com/in/marcocuscuna/)  
 [![GitHub](https://img.shields.io/badge/GitHub-Markus2409-black?logo=github)](https://github.com/Markus2409)
