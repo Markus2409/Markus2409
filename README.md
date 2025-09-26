@@ -13,9 +13,9 @@
 
 <p align="center">
   <a href="https://github.com/AmirAynede" target="_blank">
-    <img src="https://img.shields.io/github/followers/AmirAynede?label=Follow&style=social" alt="GitHub Follow">
+    <img src="https://img.shields.io/github/followers/Markus2409?label=Follow&style=social" alt="GitHub Follow">
   </a>
-  <a href="amiraynede@gmail.com" target="_blank">
+  <a href="marco.cuscuna01@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/email-Contact-blue?style=flat&logo=gmail" alt="Email">
   </a>
 </p>
