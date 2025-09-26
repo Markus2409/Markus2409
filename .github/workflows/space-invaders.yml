@@ -27,7 +27,7 @@ jobs:
       - name: Install deps
         run: npm ci || npm i
 
-      - name: Genera space-invaders-contribution-graph.svg
+      - name: Genera space-invaders-contribution-graph1.svg
         env:
           GITHUB_USER_NAME: ${{ github.repository_owner }}
           # Opzionale se vuoi interrogare la GraphQL API per le contribution:
