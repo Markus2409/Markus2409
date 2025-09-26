@@ -1,13 +1,4 @@
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
-    <img src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg"
-         alt="GitHub Contribution Snake">
-  </picture>
-</div>
+
 
 <h1 align="center">Hi there, I am Marco ! 😊</h1>
 
@@ -52,10 +43,4 @@ I am passionate about computer science and programming, and I am particularly in
 
 ---
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg">
-    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AmirAynede/AmirAynede/output/github-snake.svg" />
-  </picture>
-</div>
+
