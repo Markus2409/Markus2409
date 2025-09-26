@@ -61,7 +61,7 @@ for (let r = 0; r < ROWS; r++) {
   }
 }
 
-// INVADER in alto (statico come prima — opzionale)
+// INVADER in alto (puoi animarlo orizzontalmente)
 const invW = invader[0].length, invH = invader.length;
 let invaderRects = "";
 for (let r = 0; r < invH; r++) {
@@ -73,6 +73,7 @@ for (let r = 0; r < invH; r++) {
 }
 const invStartX = PAD;
 const invStartY = PAD;
+const invMaxShift = (COLS - invW) * (CELL + GAP); // quanto può marciare a dx
 
 // CANNON: dimensioni locali (prima della rotazione)
 const cannonW = cannon[0].length, cannonH = cannon.length;
@@ -90,21 +91,20 @@ const cannonBoxW = cannonW * (CELL + GAP) - GAP;
 const cannonBoxH = cannonH * (CELL + GAP) - GAP;
 
 // POSIZIONE nave: **in basso a sinistra**
-// Rotiamo il cannon di 90° in senso orario per “puntare a destra”.
-// Con rotate(90) attorno a (0,0), l’oggetto occupa x:[0..H], y:[-W..0].
-// Portiamo l’origine (0,0) a (leftX, bottomY) così la base tocca il fondo.
+// La ruotiamo di 90° in senso orario per “puntare a destra”.
+// Mettiamo l’origine del gruppo alla base sinistra del rettangolo di gioco.
 const leftX   = PAD;
 const bottomY = PAD + ROWS * (CELL + GAP) - GAP;
 
-// Wrapper che oscilla su/giù
-const bobAmplitude = 8;            // px
-const bobSeconds   = 3.5;          // durata oscillazione
+// Oscillazione su/giù
+const bobAmplitude = 8;   // px
+const bobSeconds   = 3.5; // durata
 
-// PROIETTILE: parte dal “naso” (fronte destro dopo la rotazione) e va a destra
+// PROIETTILE: parte dal “naso” della nave e va a destra
 const bulletSize   = Math.floor(CELL / 3);
-const noseX        = leftX + cannonBoxH;                    // fronte dopo rotate(90)
-const noseYCenter  = bottomY - cannonBoxW / 2;              // centro verticale della nave
-const bulletStartX = noseX + 2;                             
+const noseX        = leftX + cannonBoxH;              // fronte dopo rotate(90)
+const noseYCenter  = bottomY - cannonBoxW / 2;        // centro verticale della nave
+const bulletStartX = noseX + 2;
 const bulletStartY = noseYCenter - bulletSize / 2;
 const bulletTravel = width - PAD - bulletStartX - bulletSize; // fino al margine destro
 
@@ -112,8 +112,64 @@ const bulletTravel = width - PAD - bulletStartX - bulletSize; // fino al margine
 const label = `${process.env.GITHUB_USER_NAME ?? "user"} • Space Invaders • ${today.toISOString().slice(0,10)}`;
 
 // Animazioni
-const marchSeconds  = 8;  // (opzionale: invader che marcia orizzontalmente)
-const bulletSeconds = 2.5;
+const marchSeconds  = 8;    // invader orizzontale (opzionale)
+const bulletSeconds = 2.5;  // proiettile
 
+// ====== SVG COMPLETO ======
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${width}" height="${height + 40}" viewBox="0 0 ${
+<svg width="${width}" height="${height + 40}" viewBox="0 0 ${width} ${height + 40}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label}">
+  <title>${label}</title>
+  <style>
+    @keyframes march {
+      0%   { transform: translateX(0); }
+      50%  { transform: translateX(${invMaxShift}px); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes bob {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-${bobAmplitude}px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes shootRight {
+      0%   { transform: translateX(0); opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateX(${bulletTravel}px); opacity: 0; }
+    }
+    #invaderGroup { animation: march ${marchSeconds}s ease-in-out infinite; transform-origin: 0 0; will-change: transform; }
+    #shipBob      { animation: bob ${bobSeconds}s ease-in-out infinite; transform-origin: 0 0; will-change: transform; }
+    #bullet       { animation: shootRight ${bulletSeconds}s linear infinite; transform-origin: 0 0; will-change: transform; }
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+
+  <rect x="0" y="0" width="${width}" height="${height + 40}" fill="#ffffff"/>
+  <!-- Griglia contribution -->
+  ${bgCells}
+
+  <!-- Invader in alto (marcia orizzontale) -->
+  <g id="invaderGroup" transform="translate(${invStartX}, ${invStartY})">
+    ${invaderRects}
+  </g>
+
+  <!-- Nave in basso a sinistra: prima posizioniamo, poi ruotiamo per puntare a destra -->
+  <!-- L'oscillazione verticale è applicata a shipBob (wrapper) -->
+  <g transform="translate(${leftX}, ${bottomY})">
+    <g id="shipBob">
+      <g id="ship" transform="rotate(90)">
+        ${cannonRects}
+      </g>
+      <!-- Proiettile che parte dal naso e va a destra, seguendo anche l'oscillazione -->
+      <g transform="translate(${bulletStartX - leftX}, ${bulletStartY - bottomY})">
+        <g id="bullet">
+          <rect x="0" y="0" width="${bulletSize}" height="${bulletSize}" rx="1" ry="1" fill="#0b1f2a"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <text x="${width/2}" y="${height + 28}" font-size="14" text-anchor="middle" fill="#0b1f2a">${label}</text>
+</svg>`;
+
+// Scrive su dist/
+fs.mkdirSync(OUT_DIR, { recursive: true });
+fs.writeFileSync(path.join(OUT_DIR, OUT_FILE), svg, "utf8");
+console.log(`Creato (animato): ${path.join(OUT_DIR, OUT_FILE)}`);
