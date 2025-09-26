@@ -12,7 +12,7 @@
 <h1 align="center">Hi there, I am Marco ! 😊</h1>
 
 <p align="center">
-  <a href="https://github.com/AmirAynede" target="_blank">
+  <a href="https://github.com/Markus2409" target="_blank">
     <img src="https://img.shields.io/github/followers/Markus2409?label=Follow&style=social" alt="GitHub Follow">
   </a>
   <a href="marco.cuscuna01@gmail.com" target="_blank">
