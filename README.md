@@ -39,7 +39,7 @@ My name is Marco😎. Ever since I got my hands on my father’s first computer,
 
 ---
 
-![Space Invaders](https://raw.githubusercontent.com/Markus2409/Markus2409/output/space-invaders-contribution-graph1.svg)
+<img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Markus2409/Markus2409/output/space-invaders-contribution-graph.svg">
 
 
 
