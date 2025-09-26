@@ -39,6 +39,9 @@ My name is Marco😎. Ever since I got my hands on my father’s first computer,
 
 ---
 
+![Space Invaders](https://raw.githubusercontent.com/Markus2409/Markus2409/output/space-invaders-contribution-graph.svg)
+
+
 ## Contacts
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-MarcoCuscuna-blue?logo=linkedin)](https://www.linkedin.com/in/marcocuscuna/)  
