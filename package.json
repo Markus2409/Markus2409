@@ -1,0 +1,9 @@
+{
+  "name": "space-invaders-contrib",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/generate-space-invaders.mjs"
+  },
+  "dependencies": {}
+}
