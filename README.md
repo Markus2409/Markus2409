@@ -26,7 +26,7 @@ My name is Marco😎. Ever since I got my hands on my father’s first computer,
 ## My Projects
 
 ### [LB2-Project](https://github.com/Markus2409/LB2_project_Group_3)
-### [Analysis of Illumina 450K data using R](https://github.com/LucaCagnini/DNA-RNA_Project)
+### [Analysis of Illumina 450K data using R](https://github.com/Markus2409/DNA-RNA_Project)
 ### [Simulation of a de novo genome assembly and functional genomics of the Pelobatrachus nasutus as a phenotypic plasticity, and antimicrobial defenses model](https://github.com/Markus2409/Applied_Genomics_Project)
 ### [Building a Profile Hidden Markov Model (HMM) for the detection of Kunitz-type protease inhibitor domains](https://github.com/Markus2409/MSc_Bioinformatics_HMM_KunitzDomain)
 ---
