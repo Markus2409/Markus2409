@@ -29,7 +29,7 @@ My name is Marco😎. Ever since I got my hands on my father’s first computer,
 ### [Analysis of Illumina 450K data using R](https://github.com/Markus2409/DNA-RNA_Project)
 ### [Simulation of a de novo genome assembly and functional genomics of the Pelobatrachus nasutus as a phenotypic plasticity, and antimicrobial defenses model](https://github.com/Markus2409/Applied_Genomics_Project)
 ### [Building a Profile Hidden Markov Model (HMM) for the detection of Kunitz-type protease inhibitor domains](https://github.com/Markus2409/MSc_Bioinformatics_HMM_KunitzDomain)
-### [Multi-Class Classification of Liver Cirrhosis Stages: An Evaluation of Random Forest, SVM, and Logistic Regression](https://github.com/Markus2409/AML_project)
+### [Multi-Class Classification of Liver Cirrhosis Stages: An evaluation of Machine Learning algorithms for the staging of Primary Biliary Cholangitis](https://github.com/Markus2409/AML_project)
 ---
 
 ## Computing Skills
